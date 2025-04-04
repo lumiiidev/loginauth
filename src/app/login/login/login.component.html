@@ -1,18 +1,19 @@
-<form (submit)="onSubmit()" [formGroup]="loginForm">
-    <label>Email:</label>
-    <input type="email" formControlName="email" required />
-    <span *ngIf="loginForm.get('email')?.hasError('required')">
-        Requerido
+<body class="body">
+    <form class="form" (submit)="onSubmit()" [formGroup]="loginForm" >
+    <label class="label">Email:</label>
+    <input class="input" type="email" formControlName="email" required />
+    <span class="error" *ngIf="loginForm.get('email')?.hasError('required')">
+        campo requerido
     </span>
-    <span *ngIf="loginForm.get('email')?.hasError('email')">
-        Correo no valido
+    <span class="error" *ngIf="loginForm.get('email')?.hasError('email')">
+        ingresa un correo valido
     </span>
     <br />
-    <label>Password:</label>
-    <input type="password" formControlName="password" required />
+    <label class="label">Contraseña:</label>
+    <input class="input" type="password" formControlName="password" required />
     <br />
-    <button type="submit">Login</button>
+    <button class="button" type="submit">Login</button>
     <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
-    <span *ngIf="loading"> Cargando ... </span>
+    <span class="cargando" *ngIf="loading"> Cargando ... </span>
   </form>
-  
+</body>
